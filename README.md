@@ -1,2 +1,3 @@
 # Fetch_data_from_an_API
 Marking Scheme Fetch data from an API using .then and async/await. Create a sort button which allows the user to sort the data based on market cap and percentage change.
+This will return an array of 10 objects, each containing a name,id,image,symbol, current_price,total_volume Render all of them in the form of a table as given in the UI. Handle the promise using both methods, .then and using async await. Create a search button which allows the user to search and filter the data based on the input. Create a sort button which allows the user to sort the data based on market cap and percentage change.
