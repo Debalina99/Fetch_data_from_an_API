@@ -2,7 +2,7 @@ const API_URL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&
 
 let cryptoData = [];
 
-// ---- Fetch using .then ----
+// Fetch using .then 
 function fetchDataThen() {
   fetch(API_URL)
     .then(response => response.json())
@@ -13,7 +13,7 @@ function fetchDataThen() {
     .catch(error => console.error("Error fetching with .then:", error));
 }
 
-// ---- Fetch using async/await ----
+// Fetch using async/await 
 async function fetchDataAsync() {
   try {
     const response = await fetch(API_URL);
@@ -25,7 +25,7 @@ async function fetchDataAsync() {
   }
 }
 
-// ---- Render table ----
+// Render table 
 function renderTable(data) {
   const tableBody = document.getElementById("tableBody");
   tableBody.innerHTML = "";
@@ -48,7 +48,7 @@ function renderTable(data) {
   });
 }
 
-// ---- Search ----
+// Search 
 document.getElementById("searchBtn").addEventListener("click", () => {
   const query = document.getElementById("searchInput").value.toLowerCase();
   const filtered = cryptoData.filter(
@@ -57,13 +57,13 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   renderTable(filtered);
 });
 
-// ---- Sort by Market Cap ----
+// Sort by Market Cap 
 document.getElementById("sortMarketCap").addEventListener("click", () => {
   const sorted = [...cryptoData].sort((a, b) => b.market_cap - a.market_cap);
   renderTable(sorted);
 });
 
-// ---- Sort by % Change ----
+// Sort by % Change 
 document.getElementById("sortChange").addEventListener("click", () => {
   const sorted = [...cryptoData].sort(
     (a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h
